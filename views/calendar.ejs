@@ -1,0 +1,67 @@
+<!--
+    HW 3: Calendar
+    Kaitlyn Hennessy
+    kmh319
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>Calendar</title>
+
+        <style>
+            body{
+                margin-left: 50px;
+                margin-top: 30px;
+                background: #fff5cc;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 25pt;
+            }
+
+            table, td, tr{
+                border-color: #ffa676;
+                color: #ff7a59;
+                background: white;
+                table-layout: fixed;
+            }
+
+            table{
+                border: 6px;
+                border-style: solid;
+            }
+
+            td{
+                border: 2px;
+                border-style: solid;
+                padding: 5px 10px 5px 10px;
+                text-align: center;
+                width: 75px;
+                height: 75px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table id="calTbl">
+            <tr>
+                <td onclick="location.href='/calendar?year=minus';"><b>&lt&lt</b></td>
+                <td onclick="location.href='/calendar?month=minus';"><b>&lt</b></td>
+                <td colspan="3" id="tblHead"><b><%= tblHead %></b></td>
+                <td onclick="location.href='/calendar?month=plus';"><b>&gt</b></td>
+                <td onclick="location.href='/calendar?year=plus';"><b>&gt&gt</b></td>
+            </tr>
+            <tr>
+                <td><b>SU</b></td>
+                <td><b>MO</b></td>
+                <td><b>TU</b></td>
+                <td><b>WE</b></td>
+                <td><b>TH</b></td>
+                <td><b>FR</b></td>
+                <td><b>SA</b></td>
+            </tr>
+            <%- calBody -%>
+        </table>
+    </body>
+</html>
